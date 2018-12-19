@@ -35,14 +35,14 @@ def count_elements(array)
   .map{|i, j| i.merge(count: j.length)}
 end 
 
-def merge_data(keys, data)
+def merge_data(array1, array2)
   merged_data = []
   
-  keys.each do |name|
-    name = name[:first_name]
-    data.each do |data|
-      if data[name]
-        merged_person = data[name]
+  array1.each do |array1_hash|
+    name = array1_hash[:first_name]
+    array2.each do |array2_hash|
+      if array2_hash[name]
+        merged_person = array2_hash[name]
         merged_person[:first_name] = name 
         merged_data << merged_person
       end 
